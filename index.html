@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>우리집 밸런스 식탁</title>
+  <meta name="description" content="가족별 키, 체중, 나이에 맞춘 건강한 한 끼와 집에서 하는 가벼운 운동 계획" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b3347'/%3E%3Cpath d='M15 34c0-12 8-20 17-20s17 8 17 20' fill='%23ffcf57'/%3E%3Cpath d='M13 36h38c-2 10-9 15-19 15S15 46 13 36Z' fill='%23fff7e8'/%3E%3Ccircle cx='25' cy='28' r='5' fill='%23ef6f61'/%3E%3Cpath d='M37 32c-2-9 5-14 12-13-1 7-4 13-12 13Z' fill='%2352a86b'/%3E%3C/svg%3E" />
+  <style>
+    :root{--ink:#102f3d;--navy:#0b3347;--coral:#ef6f61;--yellow:#ffcf57;--green:#4f9f67;--cream:#fff8ec;--paper:#fffdf8;--muted:#60747c;--line:#d9e4e4;--white:#fff;--shadow:0 18px 45px rgba(11,51,71,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Noto Sans KR",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+    .topbar{background:var(--navy);color:white}.topbar .wrap{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.12rem}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--yellow);display:grid;place-items:center;color:var(--navy)}.privacy{font-size:.86rem;opacity:.8}
+    main{padding:28px 0 70px}.intro{display:grid;grid-template-columns:1.02fr .98fr;gap:24px;align-items:stretch}.panel{background:white;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}.setup{padding:28px}.eyebrow{font-weight:800;color:var(--coral);letter-spacing:.04em;font-size:.84rem;margin:0 0 6px}.setup h1{font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-.05em;margin:0 0 12px;max-width:10ch}.lead{margin:0 0 22px;color:var(--muted);max-width:55ch}.profiles{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}.profile{border:1px solid var(--line);background:#f7faf9;color:var(--ink);border-radius:999px;padding:9px 15px;font-weight:800}.profile.active{background:var(--navy);border-color:var(--navy);color:white}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:.86rem;font-weight:800}.field input,.field select{width:100%;border:1px solid #bdcccc;border-radius:12px;padding:11px 12px;background:white;color:var(--ink);min-height:48px}.field input:focus,.field select:focus{outline:3px solid rgba(255,207,87,.55);border-color:var(--navy)}.wide{grid-column:span 2}.submit{grid-column:span 3;border:0;border-radius:14px;padding:14px 18px;background:var(--coral);color:white;font-weight:900;box-shadow:0 8px 20px rgba(239,111,97,.24)}.submit:hover{filter:brightness(.96)}
+    .visual{overflow:hidden;position:relative;min-height:560px;background:var(--cream)}.visual img{width:100%;height:100%;object-fit:cover;display:block}.visual-note{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(11,51,71,.92);color:white;border-radius:18px;padding:16px 18px;backdrop-filter:blur(8px)}.visual-note strong{display:block;font-size:1.08rem}.visual-note span{opacity:.82;font-size:.9rem}
+    .summary{margin:25px 0;display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:12px}.summary-head,.stat{border-radius:18px;padding:17px 18px}.summary-head{background:var(--navy);color:white}.summary-head small{opacity:.75}.summary-head h2{font-size:1.35rem;margin:2px 0 0}.stat{background:white;border:1px solid var(--line)}.stat small{display:block;color:var(--muted);font-weight:700}.stat strong{display:block;font-size:1.25rem;margin-top:2px}.stat em{font-style:normal;font-size:.78rem;color:var(--muted)}
+    .section{margin-top:42px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}.section h2{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.15;margin:0;letter-spacing:-.035em}.section-title p{margin:0;color:var(--muted);max-width:530px}.meal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.meal{background:white;border:1px solid var(--line);border-radius:22px;padding:21px;position:relative;overflow:hidden}.meal:before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--meal)}.meal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.meal h3{font-size:1.35rem;margin:6px 0}.kcal{font-size:.8rem;font-weight:900;background:#f2f5f3;border-radius:999px;padding:6px 9px}.meal-main{font-size:1.04rem;font-weight:900;margin:14px 0 8px}.meal ul{padding-left:19px;margin:8px 0;color:#405962}.tip{margin-top:14px;padding:11px 12px;background:var(--cream);border-radius:12px;font-size:.88rem}.plate{margin-top:17px;height:8px;display:grid;grid-template-columns:2fr 1fr 1fr;border-radius:99px;overflow:hidden}.plate span:nth-child(1){background:var(--green)}.plate span:nth-child(2){background:var(--yellow)}.plate span:nth-child(3){background:var(--coral)}.legend{font-size:.75rem;color:var(--muted);margin-top:5px}
+    .exercise-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.routine{background:var(--navy);color:white;border-radius:24px;padding:24px}.move{display:grid;grid-template-columns:66px 1fr auto;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.15)}.move:last-child{border:0}.move-time{width:58px;height:58px;border-radius:18px;background:var(--yellow);color:var(--navy);display:grid;place-items:center;text-align:center;font-weight:900;font-size:.78rem;line-height:1.1}.move h3{margin:0 0 2px;font-size:1.05rem}.move p{margin:0;color:rgba(255,255,255,.72);font-size:.88rem}.check{appearance:none;width:29px;height:29px;border:2px solid rgba(255,255,255,.7);border-radius:9px;display:grid;place-items:center}.check:checked{background:var(--green);border-color:var(--green)}.check:checked:after{content:"✓";font-weight:900;color:white}.timer-card{background:var(--cream);border:1px solid #f0dfbb;border-radius:24px;padding:24px;display:flex;flex-direction:column;justify-content:center;text-align:center}.timer-card h3{margin:0}.timer{font-size:3.4rem;font-weight:900;letter-spacing:-.05em;color:var(--navy);margin:10px 0}.timer-buttons{display:flex;justify-content:center;gap:9px}.timer-buttons button{border:1px solid var(--navy);border-radius:12px;padding:10px 14px;font-weight:800;background:white;color:var(--navy)}.timer-buttons .primary{background:var(--navy);color:white}.interval{font-size:.86rem;color:var(--muted);margin-top:16px}.safe{margin-top:20px;background:#eaf5ee;border-left:5px solid var(--green);border-radius:14px;padding:15px 17px}.safe strong{display:block}.safe p{margin:3px 0 0;font-size:.9rem;color:#3e6150}
+    .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.principle{padding:18px;border-radius:18px;background:white;border:1px solid var(--line)}.principle b{display:block;margin:8px 0 3px}.principle span{font-size:.88rem;color:var(--muted)}.icon{font-size:1.6rem}.sources{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}.sources p{margin:5px 0}.sources a{text-decoration-thickness:1px}.hidden{display:none!important}
+    @media(max-width:850px){.intro,.exercise-layout{grid-template-columns:1fr}.visual{min-height:390px}.summary{grid-template-columns:1fr 1fr}.summary-head{grid-column:span 2}.meal-grid{grid-template-columns:1fr}.principles{grid-template-columns:1fr 1fr}.section-title{align-items:start;flex-direction:column}}
+    @media(max-width:540px){.wrap{width:min(100% - 22px,1180px)}main{padding-top:14px}.privacy{display:none}.setup{padding:21px}.grid{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}.submit{grid-column:span 2}.summary{grid-template-columns:1fr}.summary-head{grid-column:span 1}.visual{min-height:300px}.move{grid-template-columns:55px 1fr 30px;gap:10px}.move-time{width:50px;height:50px}.principles{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="wrap"><div class="brand"><span class="brand-mark">●</span> 우리집 밸런스 식탁</div><div class="privacy">입력 정보는 이 기기 안에서만 계산돼요</div></div></header>
+  <main class="wrap">
+    <section class="intro">
+      <div class="panel setup">
+        <p class="eyebrow">오늘부터 가볍게, 가족과 함께</p>
+        <h1>잘 먹고, 덜 찌는 하루</h1>
+        <p class="lead">굶는 다이어트 대신 한 끼의 균형을 맞추고, 집에서 짧게 움직여 보세요. 가족을 고르고 정보를 입력하면 하루 계획이 달라집니다.</p>
+        <div class="profiles" role="tablist" aria-label="가족 선택">
+          <button class="profile active" data-profile="mom" role="tab" aria-selected="true">나 · 어머니</button>
+          <button class="profile" data-profile="dad" role="tab" aria-selected="false">남편</button>
+          <button class="profile" data-profile="son" role="tab" aria-selected="false">아들</button>
+        </div>
+        <form id="profile-form" class="grid">
+          <div class="field"><label for="height">키 (cm)</label><input id="height" type="number" min="120" max="220" value="160" required /></div>
+          <div class="field"><label for="weight">체중 (kg)</label><input id="weight" type="number" min="30" max="200" step="0.1" value="57" required /></div>
+          <div class="field"><label for="age">만 나이</label><input id="age" type="number" min="10" max="90" value="45" required /></div>
+          <div class="field"><label for="sex">성별</label><select id="sex"><option value="female">여성</option><option value="male">남성</option></select></div>
+          <div class="field wide"><label for="activity">평소 활동량</label><select id="activity"><option value="1.2">주로 앉아 있음</option><option value="1.375" selected>가벼운 활동 · 주 1~3회</option><option value="1.55">보통 활동 · 주 3~5회</option><option value="1.725">활동이 많은 편</option></select></div>
+          <button class="submit" type="submit">내 하루 계획 보기</button>
+        </form>
+      </div>
+      <div class="panel visual"><img src="hero.png" alt="채소와 생선이 있는 건강한 식탁 옆에서 가족이 스트레칭과 스쿼트를 하는 모습" /><div class="visual-note"><strong>접시의 절반은 채소, 움직임은 10분부터</strong><span>완벽한 하루보다 계속할 수 있는 하루가 더 좋아요.</span></div></div>
+    </section>
+
+    <section id="results" aria-live="polite">
+      <div class="summary">
+        <div class="summary-head"><small id="who">어머니의 오늘 계획</small><h2 id="headline">유지 가능한 가벼운 감량 식단</h2></div>
+        <div class="stat"><small>현재 BMI</small><strong id="bmi">22.3 · 정상 범위</strong><em>성인 참고 지표</em></div>
+        <div class="stat"><small>하루 에너지 안내</small><strong id="calories">약 1,550~1,700 kcal</strong><em>추정치 · 활동량에 따라 조절</em></div>
+        <div class="stat"><small>단백질 안내</small><strong id="protein">약 57~68g</strong><em>매 끼니 나누어 섭취</em></div>
+      </div>
+    </section>
+
+    <section class="section" id="meals">
+      <div class="section-title"><h2>세 끼를 든든하게</h2><p>밥을 빼기보다 양을 맞추고, 단백질과 채소를 먼저 챙긴 구성입니다. 배고프면 과일이나 무가당 요거트를 간식으로 더하세요.</p></div>
+      <div class="meal-grid">
+        <article class="meal" style="--meal:var(--yellow)"><div class="meal-head"><h3>아침</h3><span class="kcal" id="breakfast-kcal">약 400 kcal</span></div><div class="meal-main" id="breakfast-main">오트밀 요거트 볼 + 삶은 달걀</div><ul id="breakfast-list"><li>오트밀 ½컵, 무가당 요거트 1컵</li><li>제철 과일 한 줌, 견과 1숟갈</li><li>삶은 달걀 1개</li></ul><div class="tip">시간이 없으면: 바나나 1개 + 무가당 두유 1팩 + 달걀 1개</div></article>
+        <article class="meal" style="--meal:var(--green)"><div class="meal-head"><h3>점심</h3><span class="kcal" id="lunch-kcal">약 560 kcal</span></div><div class="meal-main" id="lunch-main">잡곡밥 + 생선구이 + 나물 두 가지</div><ul id="lunch-list"><li>잡곡밥 ⅔공기</li><li>고등어·연어 등 손바닥 크기 1토막</li><li>나물·쌈채소 2접시, 싱거운 국</li></ul><div class="plate"><span></span><span></span><span></span></div><div class="legend">채소 ½ · 단백질 ¼ · 통곡물 ¼</div></article>
+        <article class="meal" style="--meal:var(--coral)"><div class="meal-head"><h3>저녁</h3><span class="kcal" id="dinner-kcal">약 480 kcal</span></div><div class="meal-main" id="dinner-main">두부 버섯구이 + 현미밥 + 샐러드</div><ul id="dinner-list"><li>두부 ½모 또는 닭가슴살 손바닥 크기</li><li>현미밥 ½공기</li><li>버섯·파프리카·잎채소 넉넉히</li></ul><div class="tip">밤에 허기지면: 따뜻한 우유·두유 1잔 또는 방울토마토</div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2>틈틈이 30분 움직임</h2><p>한 번에 몰아서 하지 않아도 괜찮아요. 통증 없이 가능한 범위에서 횟수보다 자세를 먼저 챙기세요.</p></div>
+      <div class="exercise-layout">
+        <div class="routine">
+          <label class="move"><span class="move-time">아침<br>5분</span><span><h3>기지개 10회 + 의자 스쿼트 20회</h3><p>무릎이 불편하면 의자에 앉았다 일어나기로 바꿔요.</p></span><input class="check" type="checkbox" aria-label="아침 운동 완료" /></label>
+          <label class="move"><span class="move-time">점심 뒤<br>10분</span><span><h3>식후 편안한 속도로 걷기</h3><p>대화가 가능한 속도로 동네 한 바퀴 또는 집 안 제자리걸음.</p></span><input class="check" type="checkbox" aria-label="점심 운동 완료" /></label>
+          <label class="move"><span class="move-time">저녁<br>15분</span><span><h3 id="evening-move">1분 걷기 + 1분 가볍게 뛰기 반복</h3><p id="evening-note">처음에는 7세트, 마지막 1분은 천천히 걸어요.</p></span><input class="check" type="checkbox" aria-label="저녁 운동 완료" /></label>
+          <label class="move"><span class="move-time">TV 볼 때<br>3분</span><span><h3>팔 위로 올리기 10회 + 까치발 20회</h3><p>반동 없이 천천히, 숨을 참지 마세요.</p></span><input class="check" type="checkbox" aria-label="틈새 운동 완료" /></label>
+        </div>
+        <aside class="timer-card"><h3>걷기·달리기 15분 타이머</h3><div class="timer" id="timer">15:00</div><div class="timer-buttons"><button class="primary" id="start-timer" type="button">시작</button><button id="reset-timer" type="button">초기화</button></div><div class="interval" id="interval-label">1분 걷기부터 시작 · 1분마다 알림</div></aside>
+      </div>
+      <div class="safe"><strong>내 몸 신호가 우선이에요</strong><p>어지럼증, 가슴 통증, 심한 숨참이나 관절 통증이 생기면 즉시 멈추세요. 임신 중이거나 심장·신장 질환, 당뇨, 섭식장애, 약물 복용 등 특별한 상황이 있으면 식단·운동 시작 전 의료진과 상의하세요.</p></div>
+    </section>
+
+    <section class="section"><div class="section-title"><h2>오래 가는 네 가지 약속</h2></div><div class="principles"><div class="principle"><div class="icon">🥬</div><b>채소는 절반</b><span>색이 다른 채소를 두 가지 이상 담아요.</span></div><div class="principle"><div class="icon">🍚</div><b>탄수화물도 적당히</b><span>잡곡밥은 끼니마다 ½~1공기 안에서 조절해요.</span></div><div class="principle"><div class="icon">🥛</div><b>단백질은 나눠서</b><span>생선, 두부, 달걀, 살코기를 매 끼니 챙겨요.</span></div><div class="principle"><div class="icon">💧</div><b>물과 잠도 식단</b><span>단 음료 대신 물, 야식 대신 충분한 수면을 택해요.</span></div></div></section>
+
+    <footer class="sources"><p><strong>안내:</strong> 이 사이트는 건강한 성인을 위한 일반 정보이며 진단이나 치료를 대신하지 않습니다. 칼로리와 단백질은 입력값으로 계산한 참고 범위입니다.</p><p>참고: <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noreferrer">WHO 건강한 식사</a> · <a href="https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines" target="_blank" rel="noreferrer">신체활동 지침</a></p></footer>
+  </main>
+
+  <script>
+    const profiles={mom:{label:'어머니',height:160,weight:57,age:45,sex:'female',activity:'1.375'},dad:{label:'남편',height:173,weight:72,age:47,sex:'male',activity:'1.375'},son:{label:'아들',height:170,weight:62,age:18,sex:'male',activity:'1.55'}};
+    let current='mom';
+    const $=id=>document.getElementById(id);
+    document.querySelectorAll('.profile').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.profile').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)});current=btn.dataset.profile;const p=profiles[current];['height','weight','age','sex','activity'].forEach(k=>$(k).value=p[k]);calculate();}));
+    $('profile-form').addEventListener('submit',e=>{e.preventDefault();const p=profiles[current];['height','weight','age','sex','activity'].forEach(k=>p[k]=$(k).value);calculate();$('results').scrollIntoView({behavior:'smooth',block:'center'});});
+    function calculate(){
+      const h=+$('height').value,w=+$('weight').value,a=+$('age').value,sex=$('sex').value,act=+$('activity').value,label=profiles[current].label;
+      $('who').textContent=`${label}의 오늘 계획`;
+      if(a<19){
+        $('headline').textContent='성장을 지키는 균형 식단';$('bmi').textContent='성장기 별도 평가';$('calories').textContent='칼로리 제한 없음';$('protein').textContent='매 끼니 단백질 1가지';
+        $('breakfast-kcal').textContent='양보다 균형';$('lunch-kcal').textContent='충분히 먹기';$('dinner-kcal').textContent='굶지 않기';
+        $('evening-move').textContent='친구·가족과 빠르게 걷기 또는 가벼운 달리기';$('evening-note').textContent='즐겁게 할 수 있는 움직임을 하루에 여러 번 나눠요.';return;
+      }
+      const bmi=w/((h/100)**2);let cat=bmi<18.5?'저체중':bmi<23?'정상 범위':bmi<25?'과체중 전단계':bmi<30?'과체중':'비만 범위';
+      const bmr=10*w+6.25*h-5*a+(sex==='male'?5:-161);const tdee=bmr*act;const target=bmi<18.5?tdee:bmi<23?tdee*.93:tdee*.86;const low=Math.max(sex==='male'?1500:1200,Math.round((target-80)/50)*50),high=Math.round((target+80)/50)*50;const proteinLow=Math.round(w),proteinHigh=Math.round(w*1.2);
+      $('headline').textContent=bmi<18.5?'체중 유지와 영양 보충 식단':bmi<23?'유지 가능한 가벼운 감량 식단':'무리하지 않는 천천한 감량 식단';$('bmi').textContent=`${bmi.toFixed(1)} · ${cat}`;$('calories').textContent=`약 ${low.toLocaleString()}~${high.toLocaleString()} kcal`;$('protein').textContent=`약 ${proteinLow}~${proteinHigh}g`;
+      const mid=(low+high)/2;$('breakfast-kcal').textContent=`약 ${Math.round(mid*.25/10)*10} kcal`;$('lunch-kcal').textContent=`약 ${Math.round(mid*.35/10)*10} kcal`;$('dinner-kcal').textContent=`약 ${Math.round(mid*.3/10)*10} kcal`;
+      if(mid>2000){$('breakfast-list').innerHTML='<li>오트밀 ¾컵, 무가당 요거트 1컵</li><li>과일 1개, 견과 1숟갈</li><li>삶은 달걀 2개</li>';$('lunch-list').innerHTML='<li>잡곡밥 1공기</li><li>생선·살코기 손바닥 크기 1.5토막</li><li>나물·쌈채소 2접시, 싱거운 국</li>';$('dinner-list').innerHTML='<li>두부 ½모 또는 닭고기 손바닥 크기</li><li>현미밥 ⅔공기</li><li>버섯·파프리카·잎채소 넉넉히</li>'}else{$('breakfast-list').innerHTML='<li>오트밀 ½컵, 무가당 요거트 1컵</li><li>제철 과일 한 줌, 견과 1숟갈</li><li>삶은 달걀 1개</li>';$('lunch-list').innerHTML='<li>잡곡밥 ⅔공기</li><li>고등어·연어 등 손바닥 크기 1토막</li><li>나물·쌈채소 2접시, 싱거운 국</li>';$('dinner-list').innerHTML='<li>두부 ½모 또는 닭가슴살 손바닥 크기</li><li>현미밥 ½공기</li><li>버섯·파프리카·잎채소 넉넉히</li>'}
+      $('evening-move').textContent='1분 걷기 + 1분 가볍게 뛰기 반복';$('evening-note').textContent='처음에는 7세트, 마지막 1분은 천천히 걸어요.';
+    }
+    let remain=900,tick=null;function draw(){const m=Math.floor(remain/60),s=remain%60;$('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;const elapsed=900-remain;$('interval-label').textContent=remain===0?'오늘의 15분 완료!':`${Math.floor(elapsed/60)%2===0?'걷기':'가볍게 뛰기'} 구간 · ${60-elapsed%60===60?60:60-elapsed%60}초 남음`}
+    $('start-timer').addEventListener('click',()=>{if(tick){clearInterval(tick);tick=null;$('start-timer').textContent='계속'}else{if(remain===0)remain=900;$('start-timer').textContent='잠깐 멈춤';tick=setInterval(()=>{remain--;draw();if(remain<=0){clearInterval(tick);tick=null;$('start-timer').textContent='다시 시작'}},1000)}});$('reset-timer').addEventListener('click',()=>{clearInterval(tick);tick=null;remain=900;draw();$('start-timer').textContent='시작'});calculate();
+  </script>
+</body>
+</html>
