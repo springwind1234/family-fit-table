@@ -30,6 +30,7 @@ body{padding-left:238px}a{text-underline-offset:4px}button,a,input,select,summar
 @media(max-width:540px){.welcome{align-items:flex-start}.date-label{max-width:74px;white-space:normal;text-align:right;padding-top:5px}.welcome .lead{font-size:14px}.family-bar{gap:8px;margin:20px 0}.profile{padding:8px 10px;font-size:13px}.settings-link{font-size:12px}.daily-banner{grid-template-columns:1fr 110px;min-height:160px}.daily-banner>div{padding:18px}.daily-banner h2{font-size:24px}.daily-banner h2 br{display:block}.daily-banner p{display:none}.daily-banner img{height:100%;object-position:55% center}.summary{grid-template-columns:1fr 1fr;padding:18px 2px}.summary-head,.stat{padding:0 12px}.summary-head h2,.stat strong{font-size:15px}.stat small,.summary-head small{font-size:12px}.stat em{font-size:11px}.principles{grid-template-columns:1fr 1fr}.principle{padding:15px}.section h2{font-size:23px}.settings-body{padding:0 18px 18px}.settings-panel summary{padding:18px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+    .shopping-panel{margin-top:18px;background:#eef3e9;border:1px solid #dce6d4;border-radius:14px;overflow:hidden}.shopping-panel summary{cursor:pointer;padding:19px 22px;font-weight:700}.shopping-count{float:right;font-size:13px;color:#486442;font-weight:550}.shopping-body{padding:0 22px 20px}.shopping-body>p{color:var(--muted);font-size:14px;margin:0 0 16px}.shopping-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}.shopping-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;background:#fff;font-size:14px;cursor:pointer}.shopping-item input{width:20px;height:20px;accent-color:var(--navy);flex-shrink:0}.shopping-item:has(input:checked){background:#e1e9dc;color:#52664c}.shopping-item input:checked+span{text-decoration:line-through}.shopping-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;font-size:12px;color:var(--muted)}.shopping-reset{border:1px solid #bdcbbb;background:white;color:var(--ink);border-radius:7px;padding:8px 12px;font-size:13px;white-space:nowrap}.shopping-reset:hover{background:#f5f8f2}@media(max-width:540px){.shopping-grid{grid-template-columns:1fr}.shopping-panel summary{padding:18px 14px;font-size:14px}.shopping-count{font-size:12px}.shopping-body{padding:0 14px 18px}.shopping-footer{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
@@ -89,6 +90,14 @@ body{padding-left:238px}a{text-underline-offset:4px}button,a,input,select,summar
   </main>
 
   <script>
+    const shoppingItems=['오트밀','무가당 요거트','달걀','제철 과일','견과류','잡곡밥·현미밥','생선 (고등어·연어 등)','나물·쌈채소','두부 또는 닭가슴살','버섯·파프리카·잎채소'];
+    const shopping=document.createElement('details');
+    shopping.className='shopping-panel';
+    shopping.innerHTML='<summary><span>오늘 식단 장보기 목록</span><span class="shopping-count" aria-live="polite">0 / 10 준비</span></summary><div class="shopping-body"><p>집에 있는 재료부터 체크해 보세요. 필요한 양은 위 식단을 참고하세요.</p><div class="shopping-grid">'+shoppingItems.map((name,i)=>'<label class="shopping-item"><input type="checkbox" name="shopping-'+i+'"><span>'+name+'</span></label>').join('')+'</div><div class="shopping-footer"><span>체크한 내용은 이 화면을 보는 동안 유지돼요.</span><button type="button" class="shopping-reset">체크 초기화</button></div></div>';
+    document.getElementById('meals').append(shopping);
+    const updateShopping=()=>{const done=shopping.querySelectorAll('input:checked').length;shopping.querySelector('.shopping-count').textContent=done===shoppingItems.length?'모두 준비했어요!':done+' / '+shoppingItems.length+' 준비';};
+    shopping.addEventListener('change',updateShopping);
+    shopping.querySelector('.shopping-reset').addEventListener('click',()=>{shopping.querySelectorAll('input').forEach(input=>input.checked=false);updateShopping();});
     const profiles={mom:{label:'어머니',height:160,weight:57,age:45,sex:'female',activity:'1.375'},dad:{label:'남편',height:173,weight:72,age:47,sex:'male',activity:'1.375'},son:{label:'아들',height:170,weight:62,age:18,sex:'male',activity:'1.55'}};
     document.getElementById('today-date').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long'}).format(new Date());
     let current='mom';
