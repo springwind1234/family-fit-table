@@ -38,16 +38,16 @@ body{padding-left:238px}a{text-underline-offset:4px}button,a,input,select,summar
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#meals">오늘 식단으로 바로가기</a><aside class="sidebar"><a class="side-brand" href="#"><span class="brand-mark">●</span><span>우리집<br>밸런스 식탁</span></a><p class="nav-caption">우리 가족의 하루</p><nav aria-label="주요 메뉴"><a class="nav-link active" href="#meals"><span>◷</span> 오늘의 식단</a><a class="nav-link" href="#exercise"><span>↗</span> 가벼운 움직임</a><a class="nav-link" href="#family-settings"><span>☷</span> 가족 정보</a><a class="nav-link" href="#habits"><span>♡</span> 건강한 습관</a></nav><div class="side-note"><span>TOGETHER, EVERY DAY</span><p>같이 먹고,<br>함께 건강해지는<br>우리 가족.</p><small>한 번에 하나씩, 꾸준히.</small></div></aside><header class="topbar"><div class="wrap"><div class="brand">우리 가족 <span class="breadcrumb">/</span> 오늘의 식단</div><div class="privacy">입력 정보는 이 기기 안에서만 계산돼요</div></div></header>
+  <a class="skip-link" href="#family-settings">가족 정보로 바로가기</a><aside class="sidebar"><a class="side-brand" href="#"><span class="brand-mark">●</span><span>우리집<br>밸런스 식탁</span></a><p class="nav-caption">우리 가족의 하루</p><nav aria-label="주요 메뉴"><a class="nav-link active" href="#family-settings"><span>☷</span> 가족 정보</a><a class="nav-link" href="#meals"><span>◷</span> 오늘의 식단</a><a class="nav-link" href="#exercise"><span>↗</span> 가벼운 움직임</a><a class="nav-link" href="#habits"><span>♡</span> 건강한 습관</a></nav><div class="side-note"><span>TOGETHER, EVERY DAY</span><p>같이 먹고,<br>함께 건강해지는<br>우리 가족.</p><small>한 번에 하나씩, 꾸준히.</small></div></aside><header class="topbar"><div class="wrap"><div class="brand">우리 가족 <span class="breadcrumb">/</span> 맞춤 건강 계획</div><div class="privacy">입력 정보는 이 기기 안에서만 계산돼요</div></div></header>
   <main class="wrap">
 <section class="welcome"><div><p class="eyebrow">FAMILY FIT TABLE · 매일의 균형</p><h1>오늘, 우리집 식탁</h1><p class="lead">잘 먹고 가볍게 움직이는 하루를 함께해요.</p></div><span class="date-label" id="today-date"></span></section>
 <section class="family-settings-top" id="family-settings" aria-labelledby="family-settings-title">
   <div class="family-settings-head"><div><p class="eyebrow">OUR FAMILY</p><h2 id="family-settings-title">가족 정보를 먼저 알려 주세요</h2><p>가족을 선택하고 정보를 입력하면 오늘 식단과 권장량이 바로 달라져요.</p></div><span class="privacy-note">이 기기에서만 계산해요</span></div>
   <div class="family-bar"><div><span class="family-label">가족 선택</span>        <div class="profiles" role="group" aria-label="가족 선택">
-          <button class="profile active" data-profile="mom"  aria-pressed="true">나 · 어머니</button>
-          <button class="profile" data-profile="dad"  aria-pressed="false">남편</button>
+          <button class="profile active" data-profile="mom"  aria-pressed="true">엄마</button>
+          <button class="profile" data-profile="dad"  aria-pressed="false">아빠</button>
           <button class="profile" data-profile="son"  aria-pressed="false">아들</button>
-        </div></div><span class="selected-label"><span id="selected-family">어머니</span> 정보</span></div>
+        </div></div><span class="selected-label"><span id="selected-family">엄마</span> 정보</span></div>
   <form id="profile-form" class="profile-form-grid">
     <div class="field"><label for="height">키 <span>(cm)</span></label><input id="height" type="number" min="120" max="220" value="160" required /></div>
     <div class="field"><label for="weight">체중 <span>(kg)</span></label><input id="weight" type="number" min="30" max="200" step="0.1" value="57" required /></div>
@@ -78,13 +78,13 @@ body{padding-left:238px}a{text-underline-offset:4px}button,a,input,select,summar
 
 <section class="daily-banner"><div><span class="banner-label">작은 습관, 건강한 하루</span><h2>한 끼의 균형부터 <br>차근차근.</h2><p>완벽한 하루보다 계속할 수 있는 하루가 더 좋아요.</p><a href="#meals">오늘의 식단 다시 보기 ↑</a></div><img src="hero.png" alt="균형 잡힌 식탁과 함께 움직이는 가족" /></section>
     <section class="section" id="exercise">
-      <div class="section-title"><div><p class="eyebrow">MOVE A LITTLE</p><h2>틈틈이, 가벼운 움직임</h2></div><p>한 번에 몰아서 하지 않아도 괜찮아요. 통증 없이 가능한 범위에서 횟수보다 자세를 먼저 챙기세요.</p></div>
+      <div class="section-title"><div><p class="eyebrow">MOVE A LITTLE</p><h2 id="exercise-title">엄마의 가벼운 움직임</h2></div><p id="exercise-intro">관절에 부담을 줄이고, 일상에서 편하게 이어갈 수 있는 동작으로 구성했어요.</p></div>
       <div class="exercise-layout">
         <div class="routine">
-          <label class="move"><span class="move-time">아침<br>5분</span><span><h3>기지개 10회 + 의자 스쿼트 20회</h3><p>무릎이 불편하면 의자에 앉았다 일어나기로 바꿔요.</p></span><input class="check" type="checkbox" aria-label="아침 운동 완료" /></label>
-          <label class="move"><span class="move-time">점심 뒤<br>10분</span><span><h3>식후 편안한 속도로 걷기</h3><p>대화가 가능한 속도로 동네 한 바퀴 또는 집 안 제자리걸음.</p></span><input class="check" type="checkbox" aria-label="점심 운동 완료" /></label>
-          <label class="move"><span class="move-time">저녁<br>15분</span><span><h3 id="evening-move">1분 걷기 + 1분 가볍게 뛰기 반복</h3><p id="evening-note">처음에는 7세트, 마지막 1분은 천천히 걸어요.</p></span><input class="check" type="checkbox" aria-label="저녁 운동 완료" /></label>
-          <label class="move"><span class="move-time">TV 볼 때<br>3분</span><span><h3>팔 위로 올리기 10회 + 까치발 20회</h3><p>반동 없이 천천히, 숨을 참지 마세요.</p></span><input class="check" type="checkbox" aria-label="틈새 운동 완료" /></label>
+          <label class="move"><span class="move-time">아침<br>5분</span><span><h3 id="move-1-title">목·어깨 풀기 + 의자 스쿼트 12회</h3><p id="move-1-note">허리를 곧게 펴고 통증 없는 범위에서 천천히 움직여요.</p></span><input class="check" type="checkbox" aria-label="아침 운동 완료" /></label>
+          <label class="move"><span class="move-time">점심 뒤<br>10분</span><span><h3 id="move-2-title">식후 편안한 속도로 걷기</h3><p id="move-2-note">대화가 가능한 속도로 동네 한 바퀴 또는 집 안 제자리걸음.</p></span><input class="check" type="checkbox" aria-label="점심 운동 완료" /></label>
+          <label class="move"><span class="move-time">저녁<br>15분</span><span><h3 id="move-3-title">1분 편안하게 + 1분 빠르게 걷기</h3><p id="move-3-note">처음에는 7세트, 마지막 1분은 천천히 걸어요.</p></span><input class="check" type="checkbox" aria-label="저녁 운동 완료" /></label>
+          <label class="move"><span class="move-time">TV 볼 때<br>3분</span><span><h3 id="move-4-title">벽 밀기 10회 + 까치발 15회</h3><p id="move-4-note">반동 없이 천천히, 숨을 참지 마세요.</p></span><input class="check" type="checkbox" aria-label="틈새 운동 완료" /></label>
         </div>
         <aside class="timer-card"><h3>걷기·달리기 15분 타이머</h3><div class="timer" id="timer">15:00</div><div class="timer-buttons"><button class="primary" id="start-timer" type="button">시작</button><button id="reset-timer" type="button">초기화</button></div><div class="interval" id="interval-label">1분 걷기부터 시작 · 1분마다 알림</div></aside>
       </div>
@@ -106,30 +106,41 @@ body{padding-left:238px}a{text-underline-offset:4px}button,a,input,select,summar
     const updateShopping=()=>{const done=shopping.querySelectorAll('input:checked').length;shopping.querySelector('.shopping-count').textContent=done===shoppingItems.length?'모두 준비했어요!':done+' / '+shoppingItems.length+' 준비';};
     shopping.addEventListener('change',updateShopping);
     shopping.querySelector('.shopping-reset').addEventListener('click',()=>{shopping.querySelectorAll('input').forEach(input=>input.checked=false);updateShopping();});
-    const profiles={mom:{label:'어머니',height:160,weight:57,age:45,sex:'female',activity:'1.375'},dad:{label:'남편',height:173,weight:72,age:47,sex:'male',activity:'1.375'},son:{label:'아들',height:170,weight:62,age:18,sex:'male',activity:'1.55'}};
+    const profiles={mom:{label:'엄마',height:160,weight:57,age:45,sex:'female',activity:'1.375'},dad:{label:'아빠',height:173,weight:72,age:47,sex:'male',activity:'1.375'},son:{label:'아들',height:170,weight:62,age:18,sex:'male',activity:'1.55'}};
+    const movementPlans={
+      mom:{title:'엄마의 가벼운 움직임',intro:'관절에 부담을 줄이고, 일상에서 편하게 이어갈 수 있는 동작으로 구성했어요.',interval:['편안하게 걷기','빠르게 걷기'],moves:[['목·어깨 풀기 + 의자 스쿼트 12회','허리를 곧게 펴고 통증 없는 범위에서 천천히 움직여요.'],['식후 편안한 속도로 걷기','대화가 가능한 속도로 동네 한 바퀴 또는 집 안 제자리걸음.'],['1분 편안하게 + 1분 빠르게 걷기','처음에는 7세트, 마지막 1분은 천천히 걸어요.'],['벽 밀기 10회 + 까치발 15회','반동 없이 천천히, 숨을 참지 마세요.']]},
+      dad:{title:'아빠의 활력 움직임',intro:'걷기와 맨몸 근력을 섞어 체력과 하체 힘을 함께 챙기는 구성입니다.',interval:['빠르게 걷기','가볍게 뛰기'],moves:[['고관절 돌리기 + 스쿼트 15회','발을 어깨너비로 두고 엉덩이를 뒤로 보내며 앉아요.'],['보폭을 넓혀 힘차게 걷기','팔을 자연스럽게 흔들고 숨이 너무 차지 않는 속도를 지켜요.'],['1분 빠르게 걷기 + 1분 가볍게 뛰기','7세트를 반복하고 마지막 1분은 천천히 걸어요.'],['벽 푸시업 12회 + 까치발 20회','몸을 일직선으로 유지하고 동작 사이에 호흡을 이어가요.']]},
+      son:{title:'아들의 활동적인 움직임',intro:'성장기에는 즐겁게 움직이며 민첩성, 근력, 심폐 체력을 고르게 키워요.',interval:['가볍게 뛰기','조금 빠르게 뛰기'],moves:[['전신 스트레칭 + 제자리 점프 30초 3회','발목과 무릎을 가볍게 풀고 부드럽게 착지해요.'],['친구·가족과 빠르게 걷기','가능하면 햇볕을 쬐며 활기찬 속도로 움직여요.'],['1분 가볍게 + 1분 조금 빠르게 뛰기','경쟁보다 즐겁게 끝낼 수 있는 속도를 선택해요.'],['플랭크 20초 3회 + 스쿼트 15회','허리가 꺾이지 않게 배에 힘을 주고 자세를 먼저 챙겨요.']]}
+    };
     document.getElementById('today-date').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long'}).format(new Date());
     let current='mom';
     const $=id=>document.getElementById(id);
     document.querySelectorAll('.profile').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.profile').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',b===btn)});current=btn.dataset.profile;const p=profiles[current];['height','weight','age','sex','activity'].forEach(k=>$(k).value=p[k]);calculate();}));
     document.querySelectorAll('.nav-link').forEach(link=>link.addEventListener('click',()=>{document.querySelectorAll('.nav-link').forEach(item=>item.classList.toggle('active',item===link));}));
     $('profile-form').addEventListener('submit',e=>{e.preventDefault();const p=profiles[current];['height','weight','age','sex','activity'].forEach(k=>p[k]=$(k).value);calculate();$('results').scrollIntoView({behavior:'smooth',block:'center'});});
+    function updateMovementPlan(){
+      const plan=movementPlans[current];
+      $('exercise-title').textContent=plan.title;$('exercise-intro').textContent=plan.intro;
+      plan.moves.forEach((move,index)=>{$(`move-${index+1}-title`).textContent=move[0];$(`move-${index+1}-note`).textContent=move[1];});
+      document.querySelectorAll('.routine .check').forEach(check=>check.checked=false);
+      if(tick){clearInterval(tick);tick=null;}remain=900;$('start-timer').textContent='시작';draw();
+    }
     function calculate(){
       const h=+$('height').value,w=+$('weight').value,a=+$('age').value,sex=$('sex').value,act=+$('activity').value,label=profiles[current].label;
       $('selected-family').textContent=label;
       $('who').textContent=`${label}의 오늘 계획`;
+      updateMovementPlan();
       if(a<19){
         $('headline').textContent='성장을 지키는 균형 식단';$('bmi').textContent='성장기 별도 평가';$('calories').textContent='칼로리 제한 없음';$('protein').textContent='매 끼니 단백질 1가지';
-        $('breakfast-kcal').textContent='양보다 균형';$('lunch-kcal').textContent='충분히 먹기';$('dinner-kcal').textContent='굶지 않기';
-        $('evening-move').textContent='친구·가족과 빠르게 걷기 또는 가벼운 달리기';$('evening-note').textContent='즐겁게 할 수 있는 움직임을 하루에 여러 번 나눠요.';return;
+        $('breakfast-kcal').textContent='양보다 균형';$('lunch-kcal').textContent='충분히 먹기';$('dinner-kcal').textContent='굶지 않기';return;
       }
       const bmi=w/((h/100)**2);let cat=bmi<18.5?'저체중':bmi<23?'정상 범위':bmi<25?'과체중 전단계':bmi<30?'과체중':'비만 범위';
       const bmr=10*w+6.25*h-5*a+(sex==='male'?5:-161);const tdee=bmr*act;const target=bmi<18.5?tdee:bmi<23?tdee*.93:tdee*.86;const low=Math.max(sex==='male'?1500:1200,Math.round((target-80)/50)*50),high=Math.round((target+80)/50)*50;const proteinLow=Math.round(w),proteinHigh=Math.round(w*1.2);
       $('headline').textContent=bmi<18.5?'체중 유지와 영양 보충 식단':bmi<23?'유지 가능한 가벼운 감량 식단':'무리하지 않는 천천한 감량 식단';$('bmi').textContent=`${bmi.toFixed(1)} · ${cat}`;$('calories').textContent=`약 ${low.toLocaleString()}~${high.toLocaleString()} kcal`;$('protein').textContent=`약 ${proteinLow}~${proteinHigh}g`;
       const mid=(low+high)/2;$('breakfast-kcal').textContent=`약 ${Math.round(mid*.25/10)*10} kcal`;$('lunch-kcal').textContent=`약 ${Math.round(mid*.35/10)*10} kcal`;$('dinner-kcal').textContent=`약 ${Math.round(mid*.3/10)*10} kcal`;
       if(mid>2000){$('breakfast-list').innerHTML='<li>오트밀 ¾컵, 무가당 요거트 1컵</li><li>과일 1개, 견과 1숟갈</li><li>삶은 달걀 2개</li>';$('lunch-list').innerHTML='<li>잡곡밥 1공기</li><li>생선·살코기 손바닥 크기 1.5토막</li><li>나물·쌈채소 2접시, 싱거운 국</li>';$('dinner-list').innerHTML='<li>두부 ½모 또는 닭고기 손바닥 크기</li><li>현미밥 ⅔공기</li><li>버섯·파프리카·잎채소 넉넉히</li>'}else{$('breakfast-list').innerHTML='<li>오트밀 ½컵, 무가당 요거트 1컵</li><li>제철 과일 한 줌, 견과 1숟갈</li><li>삶은 달걀 1개</li>';$('lunch-list').innerHTML='<li>잡곡밥 ⅔공기</li><li>고등어·연어 등 손바닥 크기 1토막</li><li>나물·쌈채소 2접시, 싱거운 국</li>';$('dinner-list').innerHTML='<li>두부 ½모 또는 닭가슴살 손바닥 크기</li><li>현미밥 ½공기</li><li>버섯·파프리카·잎채소 넉넉히</li>'}
-      $('evening-move').textContent='1분 걷기 + 1분 가볍게 뛰기 반복';$('evening-note').textContent='처음에는 7세트, 마지막 1분은 천천히 걸어요.';
     }
-    let remain=900,tick=null;function draw(){const m=Math.floor(remain/60),s=remain%60;$('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;const elapsed=900-remain;$('interval-label').textContent=remain===0?'오늘의 15분 완료!':`${Math.floor(elapsed/60)%2===0?'걷기':'가볍게 뛰기'} 구간 · ${60-elapsed%60===60?60:60-elapsed%60}초 남음`}
+    let remain=900,tick=null;function draw(){const m=Math.floor(remain/60),s=remain%60;$('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;const elapsed=900-remain,interval=movementPlans[current].interval;$('interval-label').textContent=remain===0?'오늘의 15분 완료!':`${interval[Math.floor(elapsed/60)%2]} 구간 · ${60-elapsed%60===60?60:60-elapsed%60}초 남음`}
     $('start-timer').addEventListener('click',()=>{if(tick){clearInterval(tick);tick=null;$('start-timer').textContent='계속'}else{if(remain===0)remain=900;$('start-timer').textContent='잠깐 멈춤';tick=setInterval(()=>{remain--;draw();if(remain<=0){clearInterval(tick);tick=null;$('start-timer').textContent='다시 시작'}},1000)}});$('reset-timer').addEventListener('click',()=>{clearInterval(tick);tick=null;remain=900;draw();$('start-timer').textContent='시작'});calculate();
   </script>
 </body>
